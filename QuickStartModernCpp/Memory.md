@@ -222,12 +222,6 @@ uint32_t* ptr = &my_age;
 - **Stack**: fast, structured, for fixed-size variables. Requires sizes known at compile time.
 - **Heap**: flexible, dynamic memory. Requires manual management via `new` and `delete`.
 
-### Memory Segments in a C++ Program
-- Code: stores binary instructions.
-- Static: stores static/global variables.
-- Stack: fast, structured, for fixed-size variables. Requires sizes known at compile time.
-- Heap: flexible, dynamic memory. Requires manual management via new and delete.
-
 ### Heap Allocation with Pointers
 - Use `new` to allocate memory on the heap:
 

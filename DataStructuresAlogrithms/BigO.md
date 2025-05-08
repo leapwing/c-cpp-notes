@@ -42,7 +42,7 @@
   - **Average case (Θ):** The target is somewhere in the middle (e.g., number 4).
 
 3. **Common Misuse in Language**:
-- People often say “average Big O” or “best-case Big O”, but:
+- People often say "average Big O" or "best-case Big O", but:
   - **Technically**, Big O always refers to the **worst-case** performance.
   - Use **Theta(Θ)** for average case, and **Omega(Ω)** for best case.
 
@@ -53,18 +53,18 @@
 1. **Introduction to O(n)**:
 - O(n) is not the fastest or slowest, but it’s **the easiest to understand**, so it’s introduced first.
 
-2. **Example Function – printItems(n)**:
-- A simple function with a **for loop that runs n times**.
+2. **Example Function – `printItems(n)`**:
+- A simple function with a **for loop that runs `n` times**.
 - Each iteration prints the loop index.
-- If you pass 10, it prints **10 items** (0 to 9).
+- If you pass `10`, it prints **10 items** (0 to 9).
 
 3. **Why It’s O(n)**:
-- The number of operations **grows linearly** with the input size n.
+- The number of operations **grows linearly** with the input size `n`.
 - This makes it a classic case of **linear time complexity**.
 
 4. **Visual Representation**:
 - On a graph:
-  - **X-axis**: Input size (n)
+  - **X-axis**: Input size (`n`)
   - **Y-axis**: Number of operations
 - O(n) plots as a **straight line**, meaning the operations grow proportionally with input.
 
@@ -77,7 +77,7 @@
 
 2. **Example Function**:
 - A function with **two separate for loops**, each running n times.
-- Total operations: n + n = 2n.
+- Total operations: `n + n = 2n`.
 
 3. **Simplified Big O**:
 - Instead of writing **O(2n)**, we simplify it to **O(n)**.
@@ -85,7 +85,7 @@
 
 4. **Why Drop Constants?**:
 - Big O measures **growth rate categories**, not exact performance.
-- Linear growth (like 2n or 100n) behaves fundamentally different from exponential growth as n increases.
+- Linear growth (like 2n or 100n) behaves fundamentally different from exponential growth as `n` increases.
 - The simplification helps focus on the **type of growth**, not the precise number of operations.
 
 5. **Key Takeaway**:
@@ -99,15 +99,15 @@
 - Arises when you have **nested loops**, where one loop runs inside another.
 
 2. **Example Function**:
-- A function with a **for loop nested inside another** (both run n times).
-- When run with n = 10, it prints **100 lines**—demonstrating n × n = n² operations.
+- A function with a **for loop nested inside another** (both run `n` times).
+- When run with `n = 10`, it prints **100 lines**—demonstrating `n × n = n²` operations.
 
 3. **Big O Classification**:
 - This is **O(n²)** because the number of operations grows **quadratically** with the input size n.
 
 4. **Graph Comparison**:
 - O(n²) grows **much faster** than O(n).
-- It’s significantly **less efficient**, especially as n increases.
+- It’s significantly **less efficient**, especially as `n` increases.
 
 5. **Efficiency Implication**:
 - When comparing two solutions—one with O(n) and one with O(n²)—**O(n) is always the better choice** if both solve the problem correctly.
@@ -126,13 +126,13 @@
   - Combines:
     - **Nested for loops** (O(n²))
     - Followed by a **single for loop** (O(n))
-  - When run with n = 10, it prints:
+  - When run with `n = 10`, it prints:
     - 100 lines from the nested loops (0,0 to 9,9)
     - 10 lines from the single loop (0 to 9)
 
 3. **Total Complexity**:
 - Mathematically: **O(n² + n)**
-- **O(n²)** is the dominant term; **O(n)** becomes insignificant as n increases.
+- **O(n²)** is the dominant term; **O(n)** becomes insignificant as `n` increases.
 
 4. **Why Drop Non-Dominant Terms**:
 - For large input sizes, the lower-order term (O(n)) contributes **negligibly** to total growth.
@@ -146,14 +146,14 @@
 ## Understanding O(1) – Constant Time Complexity
 
 1. **Introduction to O(1)**:
-  - Represents operations where the **execution time does not grow** with the input size n.
+  - Represents operations where the **execution time does not grow** with the input size `n`.
 
-2. **Example Function – addItems(n)**:
-  - Performs a simple addition: n + n.
+2. **Example Function – `addItems(n)`**:
+  - Performs a simple addition: `n + n`.
   - Whether n is 1 or 1,000,000, it still performs **one operation**.
 
 3. **Simplification Reminder**:
-  - Even if you add n + n + n (which is technically two operations), it’s still considered **O(1)** because **constants are dropped** in Big O notation.
+  - Even if you add `n + n + n` (which is technically two operations), it’s still considered **O(1)** because **constants are dropped** in Big O notation.
 
 4. **Graph Representation**:
   - Appears as a **flat horizontal line** on a graph.
@@ -174,7 +174,7 @@
 2. **Binary Search Demonstration**:
   - Given a **sorted list** of 8 elements, the algorithm:
     - Cuts the list in half repeatedly to find a target number.
-    - Example: Finding the number 1 took 3 steps.
+    - Example: Finding the number `1` took 3 steps.
     - Since 2^3 = 8, this is log base 2 of 8 = 3.
 
 3. **General Rule**:
@@ -196,17 +196,17 @@
 ## Big O with Multiple Input Terms (Different Variables)
 
 1. **Single vs. Multiple Inputs**:
-  - Previously, a function with two for loops running n times was simplified from **O(2n)** to **O(n)**.
-  - That worked because both loops depended on **the same input n**.
+  - Previously, a function with two for loops running `n` times was simplified from **O(2n)** to **O(n)**.
+  - That worked because both loops depended on **the same input `n`**.
 
-2. **New Example with Two Inputs (a and b)**:
+2. **New Example with Two Inputs (`a` and `b`)**:
   - A function now has:
-    - One loop that runs a times → **O(a)**
-    - Another loop that runs b times → **O(b)**
+    - One loop that runs `a` times → **O(a)**
+    - Another loop that runs `b` times → **O(b)**
 
 3. **Common Mistake**:
-  - Incorrectly assuming both inputs are the same (a = n, b = n) and simplifying to **O(n)**.
-  - This is not valid when a and b represent **different input sizes**.
+  - Incorrectly assuming both inputs are the same (`a = n`, `b = n`) and simplifying to **O(n)**.
+  - This is not valid when `a` and `b` represent **different input sizes**.
 
 4. **Correct Simplification**:
   - When the loops are sequential: **O(a + b)**
@@ -220,26 +220,26 @@
 
 1. **General Concept**:
   - Most operations on vectors also apply to **arrays**.
-  - The variable n refers to the **number of items** in the vector or array.
+  - The variable `n` refers to the **number of items** in the vector or array.
 
 2. **Efficient (O(1)) Operations**:
-  - **Adding to the end** (push_back)
-  - **Removing from the end** (pop_back)
-  - **Accessing by index** (e.g., vec[3])
+  - **Adding to the end** (`push_back`)
+  - **Removing from the end** (`pop_back`)
+  - **Accessing by index** (e.g., `vec[3]`)
   - ✅ These are all **O(1)** because no reindexing or shifting is required.
 
 3. **Inefficient (O(n)) Operations**:
-  - **Inserting or removing from the beginning** (insert or erase at begin()):
+  - **Inserting or removing from the beginning** (`insert` or `erase` at `begin()`):
     - Requires **shifting all subsequent elements** to update their positions.
   - **Inserting or removing in the middle**:
     - Also requires **shifting elements**, so it’s still **O(n)**.
-    - Even though it may seem like “half of n”, constants like ½ are dropped in Big O.
+    - Even though it may seem like "half of `n`", constants like ½ are dropped in Big O.
   - **Searching by value**:
     - Requires checking each element → **O(n)** (linear search).
 
 4. **Key Takeaways**:
-  - ✅ **O(1)**: push_back, pop_back, access by index.
-  - ❌ **O(n)**: insert, erase (except at the end), search by value.
+  - ✅ **O(1)**: `push_back`, `pop_back`, access by index.
+  - ❌ **O(n)**: `insert`, `erase` (except at the end), search by value.
   - Efficiency depends on **where the operation occurs** in the vector.
 
 ## Big O Wrap-Up
@@ -256,7 +256,7 @@
   - O(n) → 1000 operations
   - O(n²) → 1,000,000 operations
 
-> **Key Insight**: As n grows, **O(n²)** becomes dramatically less efficient than the others.
+> **Key Insight**: As `n` grows, **O(n²)** becomes dramatically less efficient than the others.
 
 ### Common Big O Patterns:
 
